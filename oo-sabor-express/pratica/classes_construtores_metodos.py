@@ -16,6 +16,64 @@
 
 class ContaBancaria:
     def __init__(self, titular="", saldo=0.0):
-        self.titular = titular
-        self.saldo = saldo
+        self._titular = titular
+        self._saldo = saldo
         self._ativo = False
+
+    def __str__(self):
+        return f"{self.titular}, {self.saldo}"
+
+    @classmethod
+    def ativar_conta(cls,conta):
+        conta._ativo = True
+    
+    @property
+    def titular(self):
+        return self._titular
+    @property
+    def saldo(self):
+        return self._saldo
+    @property
+    def ativo(self):
+        return self._ativo
+
+juvenal = ContaBancaria("Juvenal", 100)
+rosa = ContaBancaria("Rosa", 90)
+print(juvenal)
+print(rosa)
+
+chica = ContaBancaria("chica", 200)
+print(f"Conta ativa: {chica._ativo}")
+ContaBancaria.ativar_conta(chica)
+print(f"Conta ativa: {chica._ativo}")
+
+manoel = ContaBancaria("Manoel",500)
+print(manoel.titular)
+
+class ClienteBanco:
+    def __init__(self, nome, cpf, nascimento, profissao,status):
+        self.nome = nome
+        self.cpf = cpf
+        self.nascimento = nascimento
+        self.profissao = profissao
+        self.status = status
+    
+    def __str__(self):
+        return f"{self.nome}, {self.cpf}, {self.nascimento}, {self.profissao}, {self.status}"
+
+    @classmethod
+    def criar_conta(cls, titular, saldo):
+        conta = ContaBancaria(titular, saldo)
+        return conta
+
+
+pessoa1 = ClienteBanco("Bernardo", 00000000000, "01/01/1991", "Pedreiro", True)
+pessoa2 = ClienteBanco("Pedro",11111111111, "02/02/1992", "Empreendedora", False)
+pessoa3 = ClienteBanco("Jose", 22222222222, "03/03/1993", "Policial", True)
+
+print(pessoa1)
+print(pessoa2)
+print(pessoa3)
+print()
+conta_cliente1 = ClienteBanco.criar_conta("Jaqueline", 1200)
+print(conta_cliente1)
