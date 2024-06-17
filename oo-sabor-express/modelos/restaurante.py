@@ -27,14 +27,14 @@ class Restaurante:
     def alternar_estado(self):
         self._ativo = not self._ativo
 
-    def receber_avaliacao(self, cliente, nota):
+    def receber_avaliacao(self, cliente, nota): # TODO limitar nota em 5.
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao) # adiciona a avaliação na lista
 
     @property
     def media_avaliacao(self):
         if not self._avaliacao:
-            return 0
+            return f"Restaurante novo"
         soma_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
         qtd_notas = len(self._avaliacao)
         media = round(soma_notas / qtd_notas, 1) # arredonda usando 1 casa decimal
