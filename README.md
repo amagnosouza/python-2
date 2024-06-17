@@ -1,6 +1,3 @@
-Claro! Aqui está um arquivo README em Markdown com os pontos solicitados:
-
-```markdown
 # Introdução à Orientação a Objetos com Python
 
 ## Tópicos abordados
@@ -35,8 +32,3 @@ Classes permitem agrupar dados e comportamentos relacionados, promovendo uma org
 ## Aprenda a usar o construtor para inicializar objetos e definir seus estados iniciais
 
 O construtor (`__init__` no Python) é um método especial que é executado automaticamente quando uma nova instância da classe é criada. Ele é usado para inicializar os atributos do objeto e definir seu estado inicial. Isso garante que cada objeto comece em uma condição válida e previsível, pronta para uso imediato.
-
----
-
-Explore esses tópicos em detalhes para dominar a orientação a objetos com Python e aprimorar suas habilidades de programação!
-```
