@@ -31,7 +31,9 @@ class Livro:
     def emprestar(self):
         self.disponivel = False
 
-    def verificar_disponibilidade(ano)
+    def verificar_disponibilidade(ano):
+        livros_disponiveis = [livro for livro in Livro.livros if livro.ano_publicacao == ano and livro.disponivel]
+        return livros_disponiveis
     
 livro1 = Livro("A Baleia", "João Coelho", 1975)
 livro2 = Livro("O Biscoito", "Manoel Fernandez", 2018)
